@@ -9,6 +9,9 @@ eval "$(/opt/homebrew/bin/brew shellenv)"
 brew install --cask google-chrome ghostty slack jetbrains-toolbox visual-studio-code antigravity dockdoor
 brew install go pure zsh-history-substring-search uv
 
+uv python install
+uv python update-shell
+
 touch ~/.hushlogin
 mkdir -p ~/.config/ghostty
 
