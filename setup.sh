@@ -12,6 +12,8 @@ brew install go pure zsh-history-substring-search uv
 uv python install
 uv python update-shell
 
+git config --global alias.bp "pull --rebase --autostash"
+
 touch ~/.hushlogin
 mkdir -p ~/.config/ghostty
 
