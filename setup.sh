@@ -14,6 +14,7 @@ go install mvdan.cc/gofumpt@latest
 uv python install
 uv python update-shell
 
+git config --global push.autoSetupRemote true
 git config --global alias.bp "pull --rebase --autostash"
 
 touch ~/.hushlogin
@@ -42,4 +43,8 @@ source "$(brew --prefix)/share/zsh-history-substring-search/zsh-history-substrin
 bindkey '^[[A' history-substring-search-up
 bindkey '^[[B' history-substring-search-down
 HISTORY_SUBSTRING_SEARCH_FUZZY=true
+
+HISTSIZE=10000
+SAVEHIST=1000
+setopt SHARE_HISTORY
 EOF
