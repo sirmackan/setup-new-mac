@@ -6,7 +6,8 @@ set -e
 echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> ~/.zprofile
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
-brew install --cask google-chrome ghostty slack jetbrains-toolbox visual-studio-code antigravity dockdoor
+brew install --cask google-chrome ghostty slack jetbrains-toolbox visual-studio-code antigravity dockdoor raycast
+
 brew install go pure zsh-history-substring-search uv
 
 go install mvdan.cc/gofumpt@latest
