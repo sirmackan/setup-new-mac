@@ -9,13 +9,15 @@ eval "$(/opt/homebrew/bin/brew shellenv)"
 brew install --cask google-chrome ghostty slack jetbrains-toolbox visual-studio-code antigravity dockdoor
 brew install go pure zsh-history-substring-search uv
 
+go install mvdan.cc/gofumpt@latest
+
 uv python install
 uv python update-shell
 
 git config --global alias.bp "pull --rebase --autostash"
 
 touch ~/.hushlogin
-mkdir -p ~/.config/ghostty
+mkdir -p ~/tmp ~/git ~/.config/ghostty
 
 cat > ~/.config/ghostty/config <<'EOF'
 theme = Snazzy
