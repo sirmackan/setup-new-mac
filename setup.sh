@@ -32,15 +32,6 @@ cat >> ~/.zshrc <<'EOF'
 autoload -U promptinit; promptinit
 prompt pure
 
-alias ll="ls -lA"
-alias cdgit="cd ~/git"
-alias cdtmp="cd ~/tmp"
-
-export PATH="$PATH:$(go env GOPATH)/bin"
-
-alias gogetall="go mod tidy && go get -u ./... && go mod vendor"
-alias gofmt="gofumpt -w -l ."
-
 source "$(brew --prefix)/share/zsh-history-substring-search/zsh-history-substring-search.zsh"
 bindkey '^[[A' history-substring-search-up
 bindkey '^[[B' history-substring-search-down
@@ -49,4 +40,13 @@ HISTORY_SUBSTRING_SEARCH_FUZZY=true
 HISTSIZE=10000
 SAVEHIST=10000
 setopt SHARE_HISTORY
+
+export PATH="$PATH:$(go env GOPATH)/bin"
+
+alias ll="ls -lA"
+alias cdgit="cd ~/git"
+alias cdtmp="cd ~/tmp"
+
+alias gogetall="go mod tidy && go get -u ./... && go mod vendor"
+alias gofmt="gofumpt -w -l ."
 EOF
