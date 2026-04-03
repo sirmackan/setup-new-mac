@@ -9,9 +9,9 @@ softwareupdate --install-rosetta --agree-to-license
 echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> ~/.zprofile
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
-brew install --cask google-chrome ghostty slack jetbrains-toolbox visual-studio-code antigravity dockdoor raycast docker-desktop
+brew install --cask google-chrome ghostty slack jetbrains-toolbox visual-studio-code dockdoor raycast docker-desktop antigravity codex claude-code
 
-brew install go pure zsh-history-substring-search uv
+brew install go pure zsh-history-substring-search uv gemini-cli
 
 go install mvdan.cc/gofumpt@latest
 
