@@ -11,7 +11,7 @@ eval "$(/opt/homebrew/bin/brew shellenv)"
 
 brew install --cask google-chrome ghostty slack jetbrains-toolbox visual-studio-code dockdoor raycast docker-desktop antigravity codex claude-code
 
-brew install go pure zsh-history-substring-search uv nvm gemini-cli
+brew install go pure zsh-history-substring-search uv gemini-cli
 
 go install mvdan.cc/gofumpt@latest
 
@@ -52,3 +52,5 @@ alias cdtmp="cd ~/tmp"
 alias gogetall="go mod tidy && go get -u ./... && go mod vendor"
 alias gofmt="gofumpt -w -l ."
 EOF
+
+https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.4/install.sh | bash
