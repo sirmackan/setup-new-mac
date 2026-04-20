@@ -46,6 +46,9 @@ setopt SHARE_HISTORY
 
 export PATH="$PATH:$(go env GOPATH)/bin"
 
+export ANDROID_HOME=$HOME/Library/Android/sdk 
+export PATH=$PATH:$ANDROID_HOME/platform-tools
+
 alias ll="ls -lA"
 alias cdgit="cd ~/git"
 alias cdtmp="cd ~/tmp"
