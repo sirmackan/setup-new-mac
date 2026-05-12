@@ -54,6 +54,9 @@ alias ll="ls -lA"
 alias cdgit="cd ~/git"
 alias cdtmp="cd ~/tmp"
 
+alias gs="git status"
+alias gbp="git bp"
+
 alias gogetall="go mod tidy && go get -u ./... && go mod vendor"
 alias gofmt="gofumpt -w -l ."
 EOF
