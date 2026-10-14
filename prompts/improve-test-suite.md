@@ -161,7 +161,7 @@ Look for:
 
 **Never remove a test merely because another test looks similar.**
 
-Before removing it, establish that:
+Before removing a test as redundant, establish that:
 
 1. The meaningful behavior is already covered.
 2. The relevant failure mode is already covered.
@@ -211,7 +211,7 @@ A failing test is **not automatically a bad test**.
 
 If you identify meaningful behavior that is currently implemented incorrectly:
 
-1. Add a test that accurately expresses the intended behavior.
+1. Plan a test that accurately expresses the intended behavior; add it in Phase 9 after saving the audit.
 2. It is acceptable and expected for that test to fail against the current implementation.
 3. Clearly identify the underlying production defect.
 4. Do not weaken, remove, or alter the test merely to make the suite pass.
@@ -313,9 +313,9 @@ Do not delete these without strong justification.
 
 ### 12. Existing production defects exposed by tests
 
-List any defects for which you added tests that correctly fail against the current implementation.
+List identified production defects and the tests proposed to expose them.
 
-For every proposed deletion, use this reasoning:
+For every proposed deletion justified by redundancy, use this reasoning:
 
 > **"This test can be removed because X is already covered by Y, and the removed test does not exercise a distinct failure mode."**
 
@@ -499,7 +499,7 @@ rather than implementation details.
 After all changes:
 
 1. Run the full relevant test suite.
-2. Confirm all remaining tests pass, except for legitimate tests explicitly added to expose known production defects.
+2. Confirm all remaining tests pass, except for explicitly documented failures caused by existing production defects exposed by legitimate tests.
 3. Confirm all newly added tests pass or are correctly failing because they expose documented production defects.
 4. Compare test count before and after.
 5. Compare coverage before and after where tooling allows.
