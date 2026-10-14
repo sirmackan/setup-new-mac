@@ -254,9 +254,11 @@ Similarity of assertions is not sufficient justification for deletion.
 
 ---
 
-# Phase 8 — Produce an Audit Before Editing
+# Phase 8 — Create an Audit Markdown File Before Editing
 
-Before modifying the suite, produce a structured audit.
+Before modifying the suite, create `test-suite-audit.md` in the project root and write the structured audit to that file. Include the baseline commands and results from Phase 1, followed by the classifications below. An audit provided only in chat does not satisfy this requirement.
+
+If multiple AI agents collaborate, the coordinating agent must consolidate their findings into this single audit file before any agent modifies the suite. Preserve the original audit decisions and append any later discoveries or changes in reasoning.
 
 Classify relevant tests and files into:
 
@@ -333,13 +335,13 @@ For significant restructuring:
 
 > **"These tests/files should be reorganized because X; the new structure makes Y easier to understand, discover, or maintain."**
 
-Do not begin deleting tests simply because they appear redundant during initial inspection. Complete the audit first.
+Do not begin deleting tests simply because they appear redundant during initial inspection. Complete and save `test-suite-audit.md` first.
 
 ---
 
 # Phase 9 — Modify the Test Suite
 
-After completing the audit, implement the improvements.
+After completing and saving `test-suite-audit.md`, implement the improvements.
 
 You may:
 
@@ -523,7 +525,9 @@ A successful result is one where the suite provides **better intentional confide
 
 # Final Report
 
-Provide a concise but complete final report containing:
+After final verification, create `test-suite-final-report.md` in the project root. Write a concise but complete report of the actual changes and verification results, using the sections below. Keep it separate from `test-suite-audit.md` so the initial assessment and final outcome can be compared. A report provided only in chat does not satisfy this requirement.
+
+If multiple AI agents collaborate, the coordinating agent must consolidate their changes, verification results, and unresolved concerns into this single final report file. In the final chat response, link to both Markdown files and briefly summarize the outcome.
 
 ## Baseline
 
@@ -609,6 +613,8 @@ The task is successful when:
 * The full relevant suite passes, except for explicitly documented failures caused by existing production defects exposed by legitimate tests.
 * Before/after impact is documented.
 * Remaining uncertainties and coverage gaps are explicitly reported.
+* `test-suite-audit.md` exists in the project root and was completed before any test-suite changes.
+* `test-suite-final-report.md` exists in the project root and documents the actual changes, final verification results, and remaining concerns.
 
 Do **not** equate success with a smaller test count.
 
