@@ -170,6 +170,8 @@ Before removing a test as redundant, establish that:
 
 If these conditions cannot be established, keep the test or classify it as difficult to determine.
 
+Overlapping tests at different layers may still be worth keeping for fast feedback, reliable execution, or failure diagnosis. Account for which workflows run each test before deleting either.
+
 ---
 
 # Phase 5 — Identify Missing Coverage
@@ -229,6 +231,8 @@ The expected reasoning for such a test is:
 Do not use the current implementation as the definition of correct behavior when the implementation itself is what is being evaluated.
 
 The test should express the intended contract.
+
+Ground the intended behavior in project requirements, documented contracts, or established caller expectations, and cite that evidence in the audit. If the contract is ambiguous, report the uncertainty instead of declaring a production defect.
 
 If project conventions require the final suite to be green, do not silently remove or weaken a legitimate bug-exposing test. Report the failing test and underlying production defect explicitly.
 
@@ -374,9 +378,9 @@ Do not optimize for the lowest possible test count.
 
 ---
 
-# Phase 10 — Validate New and Strengthened Tests Adversarially
+# Phase 10 — Validate New and Modified Tests Adversarially
 
-For every test that is added or substantially strengthened, perform an adversarial check.
+For every test that is added or whose setup or assertions are materially changed, including rewrites and consolidation, perform an adversarial check for the meaningful failure modes it must detect.
 
 Ask:
 
